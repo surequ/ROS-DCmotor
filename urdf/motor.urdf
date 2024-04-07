@@ -1,0 +1,52 @@
+<robot name="motor">
+  <link name="base_link"/>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+  </joint>
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <cylinder length="1" radius="0.5"/>
+      </geometry>
+      <origin xyz="-0.5 0 0" rpy="1.571 0 1.571"/>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 0.5"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="round_joint" type="continuous">
+    <parent link="base_link"/>
+    <child  link="round_link"/>
+  </joint>
+  <link name="round_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.3" radius="0.1"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.571 0 1.571"/>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="body3_joint" type="fixed">
+    <parent link="round_link"/>
+    <child  link="body3_link"/>
+  </joint>
+  <link name="body3_link">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.4"/>
+      </geometry>
+      <origin xyz="0.15 0 0.2" rpy="0 0 0"/>
+       <material name="white">
+        <color rgba="1.0 1.0 1.0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+</robot>
